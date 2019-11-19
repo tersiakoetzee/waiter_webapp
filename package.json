@@ -1,0 +1,20 @@
+{
+  "name": "waiter_webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "waiterapp.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.0"
+  }
+}

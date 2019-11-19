@@ -1,0 +1,48 @@
+<div class="row">
+    <h1>Cup  Of  Joe</h1>
+    <form action="/waiters" method="POST">
+        <div class="col-12">
+            <div class="wait">
+                <span>
+                    Waiters name:
+                </span>
+                <span>
+                    <input type="text" id="textTem" class="waitername" name="waitername" value="">
+                </span>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="days">
+                <input type="checkbox" name="weekday" class="day" value="monday">Monday
+                <input type="checkbox" name="weekday" class="day" value="tuesday">Tuesday
+                <input type="checkbox" name="weekday" class="day" value="wednesday">Wednesday
+                <input type="checkbox" name="weekday" class="day" value="thursday">Thursday
+                <input type="checkbox" name="weekday" class="day" value="monday">Friday
+                <input type="checkbox" name="weekday" class="day" value="saturday">Saturday
+                <input type="checkbox" name="weekday" class="day" value="sunday">Sunday
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="submitday">
+                <input type="submit" name="submitdays" class="clicked" value="Submit">
+            </div>
+        </div>
+    </form>
+    <div class="col-12">
+          <form action="/reset" method="POST">
+          <input type="reset" name="resetdays" class="clicked" value="Reset Days">
+          </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <ul class="waiterschedule">
+            {{#each waiter}}
+             <li class="schedule">
+                {{this}}
+                </li>
+            {{/each}}
+        </ul> 
+     </div>
+</div>

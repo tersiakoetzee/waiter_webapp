@@ -1,0 +1,41 @@
+body{ 
+    background-image: url(coffee.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    h1{
+        margin-left: 10em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+.wait{
+    margin-left: 10em; 
+    margin-bottom: 3em; 
+    font-size: 1.5em; 
+}
+span{
+    color: black;
+}
+.days{
+    color: black;
+    font-size: 1.3em;
+}
+input[type=checkbox]{
+    width: 2em;
+    height: 2em;
+    }
+ .clicked{
+    display: block;
+    font-size: 1.5em;
+    color: black;
+    border-radius: 0.5em;
+    background-color: darkcyan;
+    }
+    .schedule{
+        color: black;
+        float: left;
+        font-size: 1.5em;
+        padding: 2px;
+        list-style: none;
+        margin: 10px; 
+    }
