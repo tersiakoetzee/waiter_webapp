@@ -1,6 +1,6 @@
 <div class="row">
-    <h1>Cup  Of  Joe</h1>
-    <form action="/waiters" method="POST">
+    <h1>Cup Of Joe</h1>
+    <form action="/waiter" method="POST">
         <div class="col-12">
             <div class="wait">
                 <span>
@@ -13,36 +13,42 @@
         </div>
         <div class="col-12">
             <div class="days">
-                <input type="checkbox" name="weekday" class="day" value="monday">Monday
-                <input type="checkbox" name="weekday" class="day" value="tuesday">Tuesday
-                <input type="checkbox" name="weekday" class="day" value="wednesday">Wednesday
-                <input type="checkbox" name="weekday" class="day" value="thursday">Thursday
-                <input type="checkbox" name="weekday" class="day" value="monday">Friday
-                <input type="checkbox" name="weekday" class="day" value="saturday">Saturday
-                <input type="checkbox" name="weekday" class="day" value="sunday">Sunday
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="submitday">
+                <input type="checkbox" name="Monday" class="day" value="{{waiters.Monday}}">Monday
+                <input type="checkbox" name="weekday" class="day" value="{{waiters.Tuesday}}">Tuesday
+                <input type="checkbox" name="weekday" class="day" value="{{waiters.Wednesday}}">Wednesday
+                <input type="checkbox" name="weekday" class="day" value="{{waiters.Thursday}}">Thursday
+                <input type="checkbox" name="weekday" class="day" value="{{waiters.Friday}}">Friday
+                <input type="checkbox" name="weekday" class="day" value="{{waiters.Saturday}}">Saturday
+                <input type="checkbox" name="weekday" class="day" value="{{waiters.Sunday}}">Sunday
                 <input type="submit" name="submitdays" class="clicked" value="Submit">
             </div>
         </div>
     </form>
-    <div class="col-12">
-          <form action="/reset" method="POST">
-          <input type="reset" name="resetdays" class="clicked" value="Reset Days">
-          </form>
-    </div>
-</div>
 
-<div class="row">
     <div class="col-12">
-        <ul class="waiterschedule">
-            {{#each waiter}}
-             <li class="schedule">
-                {{this}}
-                </li>
-            {{/each}}
-        </ul> 
-     </div>
+        <div class="bookeddays {{color}}">
+            <a href="/shiftdays">Monday</a>
+            {{Monday.grandTotal}}
+            <a href="/shiftdays">Tuesday</a>
+            {{Tuesday.grandTotal}}
+            <a href="/shiftdays">Wednesday</a>
+            {{Wednesday.grandTotal}}
+            <a href="/shiftdays">Thursday</a>
+            {{Thursday.grandTotal}}
+            <a href="/shiftdays">Friday</a>
+            {{Friday.grandTotal}}
+            <a href="/shiftdays">Saturday</a>
+            {{Sunday.grandTotal}}
+            <a href="/shiftday">Sunday</a>
+            {{Sunday.grandTotal}}
+        </div>
+    </div>
+
+ 
+
+    <div class="col-12">
+        <form action="/reset" method="POST">
+            <input type="reset" name="resetdays" class="clicked" value="Reset Days">
+        </form>
+    </div>
 </div>

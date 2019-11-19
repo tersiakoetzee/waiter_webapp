@@ -46,16 +46,22 @@ app.get('/', async function (req, res) {
     res.render('index')
 });
 
-
-
-app.post('/waiters', async function (req, res) {
-    await waiterRoster.newWaiter(req.body.waitername)
-    console.log(req.body.waitername);
-    
+app.post('/waiter', async function (req, res) {
+    await waiterRoster.newWaiter(req.body.weekday)
 
     res.render('index',{
-        waiter: await waiterRoster.waiterReq()
+        waiter: await waiterRoster.waiterReq(),
     });
+    console.log(waiter);
+    
+});
+
+app.get('/shiftdays', function (req, res) {
+
+    (req.body.shiftdays)
+    // res.render("shifts", { shiftdays })
+    res.render('shiftdays');
+    console.log('test2');
 });
 
 
