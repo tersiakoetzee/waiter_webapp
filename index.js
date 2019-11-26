@@ -1,3 +1,4 @@
+
 const flash = require('express-flash');
 const session = require('express-session');
 const express = require('express');
@@ -46,15 +47,30 @@ app.get('/', async function (req, res) {
     res.render('index')
 });
 
-app.post('/waiter', async function (req, res) {
-    await waiterRoster.newWaiter(req.body.weekday)
+app.get('/waiters/:user', async function (req, res) {
 
-    res.render('index',{
-        waiter: await waiterRoster.waiterReq(),
-    });
-    console.log(waiter);
-    
-});
+    res.render('waiters', {
+        username: req.params.user
+    })
+
+})
+app.post('/', async function (req, res) {
+
+    const { user } = req.body
+        console.log(user,':)');
+        
+    if (user === 'admin') {
+        res.redirect('/shiftdays')
+    } else {
+        const result = await waiterRoster.getAllWaiters(req.body.user)
+        console.log(result,':)');
+        
+        res.redirect('/waiters/' + user)
+
+    }
+})
+
+
 
 app.get('/shiftdays', function (req, res) {
 
@@ -63,10 +79,6 @@ app.get('/shiftdays', function (req, res) {
     res.render('shiftdays');
     console.log('test2');
 });
-
-
-
-
 
 
 

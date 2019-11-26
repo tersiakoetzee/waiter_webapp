@@ -1,54 +1,24 @@
 <div class="row">
     <h1>Cup Of Joe</h1>
-    <form action="/waiter" method="POST">
+    <form action="/" method="POST">
         <div class="col-12">
-            <div class="wait">
-                <span>
-                    Waiters name:
-                </span>
-                <span>
-                    <input type="text" id="textTem" class="waitername" name="waitername" value="">
-                </span>
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="days">
-                <input type="checkbox" name="Monday" class="day" value="{{waiters.Monday}}">Monday
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Tuesday}}">Tuesday
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Wednesday}}">Wednesday
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Thursday}}">Thursday
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Friday}}">Friday
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Saturday}}">Saturday
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Sunday}}">Sunday
-                <input type="submit" name="submitdays" class="clicked" value="Submit">
+            <div class="userrow">
+                <div class="user">
+                    <span>
+                        Username:
+                    </span>
+                    <span>
+                        <input type="text" id="textTem" class="user" name="user" value="" placeholder="Waiter"
+                            pattern='[A-Za-z\\s]*'>
+                    </span>
+                    <span>
+                        <button type="submit" name="listuser" class="clicked" value="waiterName">Shift
+                            Selection</button>
+
+                    </span>
+                </div>
             </div>
         </div>
     </form>
 
-    <div class="col-12">
-        <div class="bookeddays {{color}}">
-            <a href="/shiftdays">Monday</a>
-            {{Monday.grandTotal}}
-            <a href="/shiftdays">Tuesday</a>
-            {{Tuesday.grandTotal}}
-            <a href="/shiftdays">Wednesday</a>
-            {{Wednesday.grandTotal}}
-            <a href="/shiftdays">Thursday</a>
-            {{Thursday.grandTotal}}
-            <a href="/shiftdays">Friday</a>
-            {{Friday.grandTotal}}
-            <a href="/shiftdays">Saturday</a>
-            {{Sunday.grandTotal}}
-            <a href="/shiftday">Sunday</a>
-            {{Sunday.grandTotal}}
-        </div>
-    </div>
-
- 
-
-    <div class="col-12">
-        <form action="/reset" method="POST">
-            <input type="reset" name="resetdays" class="clicked" value="Reset Days">
-        </form>
-    </div>
-</div>
+    {{!-- <a href="/waiters"><button   name="listusers" class="clicked" value="login">test</button></a> --}}

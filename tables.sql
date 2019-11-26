@@ -1,11 +1,11 @@
-CREATE TABLE shifts(
+CREATE TABLE weekdays(
 id serial not null primary key,
-weekdays text not null,
-waiter_working text not null
+weekdays text not null
+
 );
 CREATE TABLE waiter(
 id serial not null primary key,   
 waiter_name text not null,
-days_id int,
-foreign key (days_id) references shifts(id)
+weekday_id int,
+foreign key ( weekday_id ) references weekdays(id)
 );

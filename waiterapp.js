@@ -1,36 +1,27 @@
+
 module.exports = function (pool) {
 
-    async function shiftDays () {
-        const daysOfTheWeek = await pool.query('select * from shifts')
-        
-        return daysOfTheWeek.rows
-      }
 
-      async function newWaiter (waiter) {
-        waiter.toUpperCase()
-        let waiterName = await pool.query('select * from waiter where waiter_name =$1', [waiter])
-        
-        let waiterSel = waiterName.rowCount
-        if (waiterSel === 0) {
-          await pool.query('insert into waiter(waiter_name) values($1)', [waiter])
-          console.log(waiterSel);
-          
-        }
-      }
+  async function getAllWaiters(name) {
 
-      async function waiterReq(){
-        waiterWanted = await pool.query('select waiter_name from waiter')
-        const listOfWaiters = [];
-        for (var i = 0; i < waiterWanted.rows.length; i++) {
-            listOfWaiters.push(waiterWanted.rows[i].waiter_name);
-        }
-        return listOfWaiters
-      }
+    let waiters = await pool.query('select * from  waiter where waiter_name = $1', [name])
 
-    return{
-        shiftDays,
-        newWaiter,
-        waiterReq
+    if (waiters.rows.length === 0) {
+      await pool.query('insert into waiter (waiter_name)values($1)', [name])
     }
+    return waiters.rows
+
+  }
+  async function shiftDays(day) {
+    var selectedDays = []
+  }
+
+
+
+  return {
+    getAllWaiters,
+    shiftDays,
+
+  }
 
 }

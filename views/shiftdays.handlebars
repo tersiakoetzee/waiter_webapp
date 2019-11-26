@@ -1,19 +1,20 @@
-   <div class="row">
-        <div class="col-12">
-            <h1>Waiter Roster</h1>
+<form action="/waiters" method="GET">
 
-<table id="waiterTable">
-    <tr>
-        <th>Waiters Name</th>
-        <th>Days Working</th>
-        
-    </tr>
-    {{#each shiftdays}}
-    <tr>
-        <td>{{waiter}}</td>
-        <td>{{test}}</td>
-    </tr>
-    {{/each}}
-</table>
+    <div class="col-12">
+        <h1>Waiters Roster</h1>
+        <div class="days">
+            <table id="waiterTable">
+                <tr>
+                    <th>Weekday</th>
+                    <th>Waiters working</th>
+                </tr>
+                {{#each actions}}
+                <tr>
+                    <td>{{names}}</td>
+                    <td>{{day}}</td>
+                </tr>
+                {{/each}}
+            </table>
         </div>
     </div>
+</form>

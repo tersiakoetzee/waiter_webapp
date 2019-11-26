@@ -1,7 +1,7 @@
-insert into shifts(weekdays)values('Monday');
-insert into shifts(weekdays)values('Tuesday');
-insert into shifts(weekdays)values('Wednesday');
-insert into shifts(weekdays)values('Thursday');
-insert into shifts(weekdays)values('Friday');
-insert into shifts(weekdays)values('Saturday');
-insert into shifts(weekdays)values('Sunday');
+insert into weekdays(weekdays)values('Monday');
+insert into weekdays(weekdays)values('Tuesday');
+insert into weekdays(weekdays)values('Wednesday');
+insert into weekdays(weekdays)values('Thursday');
+insert into weekdays(weekdays)values('Friday');
+insert into weekdays(weekdays)values('Saturday');
+insert into weekdays(weekdays)values('Sunday');
