@@ -6,14 +6,19 @@
             <table id="waiterTable">
                 <tr>
                     <th>Weekday</th>
-                    <th>Waiters working</th>
+
                 </tr>
-                {{#each actions}}
+
                 <tr>
-                    <td>{{names}}</td>
-                    <td>{{day}}</td>
+                    {{#each weekdays}}
+                    <td>{{weekday}}</td>
+                    <td>{{waiter}}</td>
+
+                    <div class="counter">{{counter}}</div>
+
+                    {{/each}}
                 </tr>
-                {{/each}}
+
             </table>
         </div>
     </div>

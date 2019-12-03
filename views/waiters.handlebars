@@ -5,27 +5,30 @@
             <div class="wait">
                 <span>
                     <div class="waiter" name="waiters">{{username}}</div>
+                    <input type="hidden" name="username" value="{{username}}">
                 </span>
             </div>
         </div>
         <div class="col-12">
-            <div class="days">
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Monday}}">Monday
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Tuesday}}">Tuesday
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Wednesday}}">Wednesday
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Thursday}}">Thursday
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Friday}}">Friday
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Saturday}}">Saturday
-                <input type="checkbox" name="weekday" class="day" value="{{waiters.Sunday}}">Sunday
-                <input type="submit" name="submitdays" class="clicked" value="Submit">
+            <div class='days'>
+
+                {{#each weekdays}}
+                <li class="day">
+                   
+                    <input type="checkbox" name="weekday" class="day" value="{{weekdays}}"> {{weekdays}}
+                </li>
+                {{/each}}
+                 <input type="submit" name="submitdays" class="clicked" value="Submit">
+
             </div>
         </div>
+</div>
+</form>
+
+
+<div class="col-12">
+    <form action="/reset" method="POST">
+        <input type="reset" name="resetdays" class="clicked" value="Reset Days">
     </form>
-
-
-    <div class="col-12">
-        <form action="/reset" method="POST">
-            <input type="reset" name="resetdays" class="clicked" value="Reset Days">
-        </form>
-    </div>
+</div>
 </div>
